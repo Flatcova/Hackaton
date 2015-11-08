@@ -13,16 +13,6 @@ var auth = require('./routes/auth');
 
 var app = express();
 
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-
-passport.use(new GoogleStrategy({
-  clientID: '14615984830-fvp1u7pmbu9q7hf8kgpuu102nm46tje3.apps.googleusercontent.com',
-  clientSecret: '_9iKmIxPghnIOQoR9qhwfoh1',
-  callbackURL: 'http://localhost:3000/auth/google/callback'},
-  function(req, accessToken, refreshToken, profile, done){
-    done(null, profile);
-  }
-));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
@@ -37,16 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({secret: 'sports'}));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.serializeUser(function(user, done){
-  done(null, user)
-});
-
-passport.deserializeUser(function(user, done){
-  done(null, user);
-});
+require('./config/passport')(app);
 
 app.use('/', routes);
 app.use('/users', users);

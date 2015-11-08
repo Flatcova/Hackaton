@@ -13,6 +13,7 @@
 
     <div>
     	<a href="/auth/google">Google +</a>
+      <a href="/auth/twitter">Twitter</a>
     </div>
   </body>
 </html>

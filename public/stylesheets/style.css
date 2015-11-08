@@ -1,8 +1,39 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  height: 100vh;
+  background-image: url(/images/americano.jpg);
+  color: white; }
 
-a {
-  color: #00B7FF;
+  .btn-face a{
+  	color: #0404B4;
+  }
+  .btn-twitter a{
+  	color: #00BFFF;
+  }
+  .btn-google a{
+  	color: #DF0101;
+  }
+.title {
+    text-align: center;    
 }
+.title h3{
+	color: #DBA901;
+}
+.title h1{
+	color: #0000FF;
+}
+.btn {
+ 	position: absolute;
+ 	top:315px;
+ 	left: 580px;
+ 	font-size: 25px;
+ 	border: 2px #D8D8D8 solid;
+ 	padding: 20px 13px 0px 13px;
+ 	background-color: #D8D8D8;
+ 	border-radius: 15px;
+ 	text-align: center;
+ 	 }
+.btn h3{
+	color: black;
+}
+ 
+ 

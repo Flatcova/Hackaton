@@ -1,5 +1,6 @@
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
+var User = require('../../models/userModel');
 
 module.exports = function(){
 	passport.use(new TwitterStrategy({
@@ -9,16 +10,28 @@ module.exports = function(){
 		passReqToCallback: true
 	},
 	function(req, token, tokenSecret, profile, done){
-		var user = {};
-		
-			//user.email = profile.emails[0].value;
-			// user.image = profile.image_url;
-			user.displayName = profile.displayName;
-			
-			user.twitter = {};
-			user.twitter.id = profile.id;
-			user.twitter.token = token;
-			
-			done(null, user);
+		var query = {
+	    	'google.id': profile.id
+	    };
+		User.findOne(query, function(error, user){
+	    	if(user){
+	    		console.log('found');
+	    		done(null, user);
+	    	}
+	    	else{
+	    		console.log('not found');
+	    		var user = new User;
+
+	    		//user.email = profile.emails[0].value;
+				// user.image = profile.image_url;
+				user.displayName = profile.displayName;
+				
+				user.twitter.id = profile.id;
+				user.twitter.token = token;
+				
+			    user.save();
+			    done(null, user);
+	    	}
+	    });
 	}))
 };

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <h1>Hello {{user.name}}</h1>
+    <img src="{{user.image}}"/>
+  </body>
+</html>

@@ -6,14 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require("passport");
 var session = require('express-session');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
 
 var app = express();
-var db = mongoose.connect('mongodb://localhost/sportsNews');
+// var db = mongoose.connect('mongodb://localhost/sportsNews');
 
 // var db = mongoose.connection;
 // db.on('error', console.error.bind(console, 'connection error:'));

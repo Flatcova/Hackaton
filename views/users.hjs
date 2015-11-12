@@ -4,16 +4,11 @@
     <title></title>
     <link rel='stylesheet' href='../public/stylesheets/style.css' />
     <link rel="stylesheet" type="text/css" href="../public/lib/bootstrap/dist/css/bootstrap.min.css">
+     <link rel='stylesheet' href='/stylesheets/style.css' />
 
     <script type="text/javascript" src="../public/lib/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="../public/lib/bootstrap/dist/js/bootstrap.js"></script>
-
-      <style>
-    body{
-      background-image: url("imgfondo.jpg");
-    }
-  </style>
-
+    <script type="text/javascript" src="../public/lib/bootstrap/dist/js/bootstrap.js"></script>
   </head>
   <body>
     <div class="page-header">
